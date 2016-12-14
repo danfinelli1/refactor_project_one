@@ -1,11 +1,15 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+     shrink-to-fit=no">
     <meta name="image_src" content="Duck IMG Placeholder" />
     <meta name="title" content="RBR Duck" />
-    <meta name="description" content="RBR Duck is your go to duck for all of your troubleshooting needs. Over 12 Software Engineering categories to get find help and a online community of programmers to help. Quack!" />
+    <meta name="description" content="RBR Duck is your go to duck for all of
+     your troubleshooting needs. Over 12 Software Engineering categories to get
+     find help and a online community of programmers to help. Quack!" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="627" />
@@ -17,13 +21,13 @@
     <title>RBR Duck</title>
 
     <link rel="shortcut icon" href=".ico">
-    <%= stylesheet_link_tag 'application.css' %>
+
+    <% stylesheet_link_tag 'application.css' %>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- <link rel="stylesheet" type="text/css" href="styles/style.css"> -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
-
 
 </head>
 
@@ -41,14 +45,17 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <%=link_to "Return Home", '/'%>
+                    <li class="hidden">
+                        <a href="#page-top"></a>
                     </li>
                     <li>
-                        <%=link_to "About Us", '/about'%>
+                        <a href="/"><strong>Return Home</strong></a>
                     </li>
                     <li>
-                        <%=link_to "The Flock", '/the_flock'%>
+                        <a class="page-scroll" href="/about"><strong>About</strong></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/ourTeam"><strong>The Flock</strong></a>
                     </li>
                 </ul>
             </div>
@@ -59,20 +66,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h3 class="section-subheading">EVERYTHING WILL GO SWIMMINGLY</h3>
+                    <h3 class="section-subheading">HTML</h3>
                 </div>
+                <!-- <h5>Click the 'No' to begin the questions cycle!</h5> -->
             </div>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <%= image_tag("welcomeBackground.png", :alt => "BGRD IMG") %>
+                  <%= image_tag("welcomeBackground.png", :alt => "BGRD IMG") %>
+
                 </div>
                 <div class="col-md-6 col-md-offset-2">
-                    <p id="solutionText">
-                      <strong>What language would you like?</strong>
-                      <a class="page-scroll" href="/html"><strong><input id="htmlBtn" class='btn' type="button" href="/html" value="HTML" /></strong></a>
-                      <a class="page-scroll" href="/css"><strong><input id="cssBtn" class='btn' type="button" href="/css" value="CSS" /></strong></a>
-                      <a class="page-scroll" href="/js"><strong><input id="jsBtn" class='btn' type="button" href="/js" value="JS" /></strong></a>
-                    </p>
+                    <div id='duckBubble'><br></div>
+                    <div class='userResponse'>
+
+                        <span id='input'>Did this answer fix your problem?</span>
+                        <button id="yesBtn" name="Yes" type="button" class="btn btn-primary">Yes</button>
+                        <button id="noBtn" name="No" type="button" class="btn btn-primary">No</button>
+                    </div>
+                    <div id='relatedLink'></div>
                 </div>
             </div>
         </div>
